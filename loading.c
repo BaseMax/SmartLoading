@@ -1,3 +1,13 @@
+/**
+*
+* @Name : SmartLoading/loading.c
+* @Version : 1.0
+* @Programmer : Max
+* @Date : 2019-05-10
+* @Released under : https://github.com/BaseMax/SmartLoading/blob/master/LICENSE
+* @Repository : https://github.com/BaseMax/SmartLoading
+*
+**/
 #include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
