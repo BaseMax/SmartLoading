@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Smart Loading</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		&nbsp; 📤 Your request is placed in the queue. Please do not send another request. Be patient ...<br>
+		&nbsp; 🔗 Link: http://google.com/book/sample.zip ...<br>
+		&nbsp; 🗂 File: sample.zip<br>
+		&nbsp; 💿 File Size: 94.76 MB<br><br>
+		&nbsp; ⌛️Uploading progress:<br>
+		<div id="loading"></div>
+		<script type="text/javascript">
+		let loading=document.querySelector("#loading");
+		function repeat(input, repeat) {
+			let result=input;
+			for(let index=1; index<repeat; index++) {
+				result+=input;
+			}
+			return result;
+		}
+		// function sleep(milliseconds) {
+		// 	var start = new Date().getTime();
+		// 	for(var i = 0; i < 1e7; i++) {
+		// 		if((new Date().getTime() - start) > milliseconds){
+		// 			break;
+		// 		}
+		// 	}
+		// }
+		// for(let index=0; index<= 100; index+=1) {
+		// 	console.log(index);
+		// 	let i=Math.floor(index);
+		// 	let result="   ";
+		// 	result+=repeat("⬛️", i/2);
+		// 	if(i != 100) {
+		// 		result+=repeat("⬜️", (100-i)/2);
+		// 	}
+		// 	result+="  (";
+		// 	result+=index;
+		// 	result+="%)";
+		// 	loading.innerHTML=index;
+		// 	sleep(50);
+		// }
+		function done() {
+			alert("Done!");
+		}
+		let index=0;
+		let seperate=100;
+		let timer=setInterval(function() {
+			// console.log(index);
+			let result="   ";
+			result+=repeat("⬛️", index);
+			if(index != 50) {
+				result+=repeat("⬜️", 50-index);
+			}
+			result+="  (";
+			result+=index * 2;
+			result+="%)";
+			loading.innerHTML=result;
+			index++;
+			if(index == 51) {
+				clearInterval(timer);
+				done();
+			}
+		}, seperate);
+		</script>
+	</body>
+</html>
