@@ -16,7 +16,14 @@ int main() {
 	printf(" ⌛️Uploading progress:\n");
 	for(double index=0; index<= 38; index+=0.1) {
 		// printf("\r %3.f\n", index);
-		Sleep(40);
+		// int i=(int) index;
+		// printf("\r   ");
+		// repeat("⬛️", i);
+		// repeat("⬜️", 38-i);
+		// printf("  (");
+		// printf("%f", index * 2.5);
+		// printf("%)");
+		// Sleep(40);
 	}
 	printf("\n");
 	return 0;
